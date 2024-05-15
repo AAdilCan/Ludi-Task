@@ -1,7 +1,6 @@
 import json
 from datetime import timedelta, datetime
 import matplotlib.pyplot as plt
-
 import plotly
 from flask import Flask, render_template
 import plotly.graph_objs as go
