@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plotly Graph</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Adding some basic styles for the button and layout adjustments -->
+    <style>
+        .main-page-button {
+            padding: 30px 20px;
+            background-color: #007BFF; /* Blue background */
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            display: block; /* Ensures the button is on its own line */
+            margin: 20px auto; /* Centers the button and adds space above and below */
+            width: max-content; /* Ensures padding affects only content width */
+        }
+        .main-page-button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+        #plotly-div {
+            margin-bottom: 20px; /* Adds space below the graph div */
+        }
+    </style>
+</head>
+<body>
+    <div id="plotly-div"></div>
+    <script>
+        var figures = {{ graphJSON|safe }};
+        Plotly.newPlot('plotly-div', figures.data, figures.layout);
+    </script>
+    <!-- Button to redirect to /main_page -->
+    <a href="/main_page" class="main-page-button">Return to Main Page</a>
+</body>
+</html>
